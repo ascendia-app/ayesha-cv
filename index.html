@@ -3,59 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ayesha | Resume</title>
+  <title>Ayesha | Interactive Resume</title>
 
   <!-- Google Fonts: JetBrains Mono -->
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Link CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Theme Toggle -->
-  <button class="toggle-btn" onclick="toggleMode()">Toggle Theme</button>
+  <!-- Theme Toggle Button -->
+  <button id="theme-toggle">🌙 Dark Mode</button>
 
-  <!-- Header -->
-  <header>
-    <h1>Ayesha</h1>
-    <p><span id="typed-text"></span></p>
-  </header>
-
-  <!-- Main Container -->
-  <div class="container">
-    <section class="fade-in">
-      <h2>About Me</h2>
-      <p>
-        Hi, I’m Ayesha. A passionate A Level student exploring technology, economics, and design.  
-        This is my interactive resume styled like code.
-      </p>
-    </section>
-
-    <section class="fade-in">
-      <h2>Skills</h2>
-      <ul>
-        <li>Web Development (HTML, CSS, JavaScript)</li>
-        <li>Data Analysis (Python, Excel)</li>
-        <li>Research & Writing (History, Sociology, Economics)</li>
-        <li>Design (Notion, Canva, Google Docs aesthetics)</li>
-      </ul>
-    </section>
-
-    <section class="fade-in">
-      <h2>Experience</h2>
-      <ul>
-        <li>Deputy Head Girl at SICAS</li>
-        <li>Founder of Ascendia academic resources</li>
-        <li>Model UN Delegate – UN Historical Security Council</li>
-        <li>Economics & Policy blogger – techonomics.os</li>
-      </ul>
-    </section>
-
-    <section class="fade-in">
-      <h2>Contact</h2>
-      <p>Email: ayesha@example.com</p>
-      <p>GitHub: <a href="https://github.com/" target="_blank">github.com/ayesha</a></p>
-    </section>
+  <!-- Terminal Style Resume -->
+  <div class="terminal">
+    <div id="output"></div>
+    <div class="line">
+      <span class="prompt">&gt;</span>
+      <input type="text" id="command" autocomplete="off" placeholder="type a command..." />
+    </div>
   </div>
 
   <!-- Script -->

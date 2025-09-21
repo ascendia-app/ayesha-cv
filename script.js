@@ -13,18 +13,33 @@ toggleBtn.addEventListener("click", () => {
 const commandInput = document.getElementById("command");
 const output = document.getElementById("output");
 
-// === Command Data ===
+// === Command Data (with syntax highlight spans) ===
 const commands = {
-  help: "Available commands: about, education, experience, projects, contact",
-  about: "I’m Ayesha, a 17 y/o A Level student passionate about Economics, Data, and Leadership.",
-  education: "📘 Education: AS/A2 Levels | SICAS Lahore | Economics, Sociology, History, Math",
-  experience: "✨ Experience: Deputy Head Girl, Ascendia Founder, MUN Delegate, SAT Prep",
-  projects: "💻 Projects: Notion templates, Ascendia site, GitHub portfolio, interactive resume",
-  contact: "📬 Contact: email@email.com | LinkedIn: linkedin.com/in/ayesha",
+  help: `<span class="keyword">const</span> commands = [<span class="string">"about"</span>, <span class="string">"education"</span>, <span class="string">"experience"</span>, <span class="string">"projects"</span>, <span class="string">"contact"</span>]`,
+  about: `<span class="keyword">let</span> about = {<br>
+&nbsp;&nbsp;name: <span class="string">"Ayesha"</span>,<br>
+&nbsp;&nbsp;role: <span class="string">"A Level Student | Economics + Data Enthusiast"</span><br>
+}`,
+  education: `<span class="keyword">const</span> education = {<br>
+&nbsp;&nbsp;school: <span class="string">"SICAS Lahore"</span>,<br>
+&nbsp;&nbsp;subjects: [<span class="string">"Economics"</span>, <span class="string">"Sociology"</span>, <span class="string">"History"</span>, <span class="string">"Math"</span>]<br>
+}`,
+  experience: `<span class="keyword">const</span> experience = [<br>
+&nbsp;&nbsp;<span class="string">"Deputy Head Girl"</span>,<br>
+&nbsp;&nbsp;<span class="string">"Ascendia Founder"</span>,<br>
+&nbsp;&nbsp;<span class="string">"Model UN Delegate"</span><br>
+]`,
+  projects: `<span class="keyword">function</span> projects() {<br>
+&nbsp;&nbsp;<span class="comment">// Notion templates, Ascendia, GitHub portfolio, interactive resume</span><br>
+}`,
+  contact: `<span class="keyword">let</span> contact = {<br>
+&nbsp;&nbsp;email: <span class="string">"ayesha@example.com"</span>,<br>
+&nbsp;&nbsp;github: <span class="string">"github.com/ayesha"</span><br>
+}`,
 };
 
-// === Typing Effect Function ===
-function typeEffect(element, text, delay = 30) {
+// === Typing Effect ===
+function typeEffect(element, text, delay = 25) {
   let i = 0;
   function typing() {
     if (i < text.length) {
@@ -42,17 +57,16 @@ function handleCommand(cmd) {
   line.className = "line";
 
   if (commands[cmd]) {
-    // Add typing effect for valid command
     const span = document.createElement("span");
     line.appendChild(span);
     output.appendChild(line);
-    typeEffect(span, `> ${commands[cmd]}`, 20);
+    typeEffect(span, commands[cmd], 12);
   } else {
-    line.textContent = `> Unknown command: ${cmd} (type 'help')`;
+    line.innerHTML = `<span class="error">ReferenceError:</span> ${cmd} is not defined. Try <span class="string">"help"</span>`;
     output.appendChild(line);
   }
 
-  output.scrollTop = output.scrollHeight; // auto-scroll down
+  output.scrollTop = output.scrollHeight;
 }
 
 // === Listen for Enter Key ===
@@ -66,22 +80,22 @@ commandInput.addEventListener("keydown", function (e) {
   }
 });
 
-// === Intro Typing Animation ===
+// === Intro Lines ===
 window.addEventListener("load", () => {
   const introLines = [
-    "> hello, i’m ayesha",
-    "> aspiring economist | data enthusiast | student leader",
-    "> type help to explore my CV",
+    `<span class="comment">// Welcome to Ayesha’s interactive resume</span>`,
+    `<span class="keyword">console</span>.log(<span class="string">"Hello, World!"</span>)`,
+    `<span class="comment">// Type "help" to explore my CV</span>`,
   ];
 
   let delay = 0;
-  introLines.forEach((line, index) => {
+  introLines.forEach((line) => {
     const p = document.createElement("p");
     p.className = "line";
     output.appendChild(p);
     setTimeout(() => {
-      typeEffect(p, line, 40);
+      typeEffect(p, line, 18);
     }, delay);
-    delay += line.length * 40 + 500; // staggered typing
+    delay += line.length * 18 + 600;
   });
 });
