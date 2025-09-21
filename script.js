@@ -13,7 +13,7 @@ toggleBtn.addEventListener("click", () => {
 const commandInput = document.getElementById("command");
 const output = document.getElementById("output");
 
-// === Command Data (with syntax highlight spans) ===
+// === Command Data ===
 const commands = {
   help: `<span class="keyword">const</span> commands = [<span class="string">"about"</span>, <span class="string">"education"</span>, <span class="string">"experience"</span>, <span class="string">"projects"</span>, <span class="string">"contact"</span>]`,
   about: `<span class="keyword">let</span> about = {<br>
@@ -37,14 +37,23 @@ const commands = {
 }`,
 };
 
-// === Typing Effect ===
-function typeEffect(element, text, delay = 25) {
+// === Typing Effect that supports HTML ===
+function typeEffect(element, html, delay = 25) {
   let i = 0;
+  let tag = false;
+  let output = "";
+
   function typing() {
-    if (i < text.length) {
-      element.innerHTML += text.charAt(i);
+    if (i < html.length) {
+      let char = html[i];
+      if (char === "<") tag = true;
+      if (char === ">") tag = false;
+
+      output += char;
+      element.innerHTML = output + (tag ? "" : `<span class="cursor">|</span>`);
+
       i++;
-      setTimeout(typing, delay);
+      setTimeout(typing, tag ? 0 : delay); // fast-skip tags
     }
   }
   typing();
