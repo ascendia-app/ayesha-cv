@@ -17,25 +17,23 @@ const output = document.getElementById("output");
 const commands = {
   help: `<span class="keyword">const</span> commands = [<span class="string">"about"</span>, <span class="string">"education"</span>, <span class="string">"experience"</span>, <span class="string">"projects"</span>, <span class="string">"contact"</span>]`,
   about: `<span class="keyword">let</span> about = {<br>
-&nbsp;&nbsp;name: <span class="string">"Ayesha"</span>,<br>
-&nbsp;&nbsp;role: <span class="string">"A Level Student | Economics + Data Enthusiast"</span><br>
+&nbsp;&nbsp;name: <span class="string">"Syeda Ayesha Wasti"</span>,<br>
+&nbsp;&nbsp;role: <span class="string">"A Level Student | Economics + Data Science Enthusiast"</span><br>
 }`,
   education: `<span class="keyword">const</span> education = {<br>
 &nbsp;&nbsp;school: <span class="string">"SICAS Lahore"</span>,<br>
-&nbsp;&nbsp;subjects: [<span class="string">"Economics"</span>, <span class="string">"Sociology"</span>, <span class="string">"History"</span>, <span class="string">"Math"</span>]<br>
+&nbsp;&nbsp;subjects: [<span class="string">"Economics"</span>, <span class="string">"Sociology"</span>, <span class="string">"Law"</span>,<span class="string">"History"</span>, <span class="string">"Math"</span>]<br>
 }`,
   experience: `<span class="keyword">const</span> experience = [<br>
-&nbsp;&nbsp;<span class="string">"Deputy Head Girl"</span>,<br>
-&nbsp;&nbsp;<span class="string">"Ascendia Founder"</span>,<br>
+&nbsp;&nbsp;<span class="string">"Deputy Head Girl @ SICAS"</span>,<br>
+&nbsp;&nbsp;<span class="string">"Web Developer and Graphic Designer"</span>,<br>
 &nbsp;&nbsp;<span class="string">"Model UN Delegate"</span><br>
 ]`,
   projects: `<span class="keyword">function</span> projects() {<br>
-&nbsp;&nbsp;<span class="comment">// Notion templates, Ascendia, GitHub portfolio, interactive resume</span><br>
+&nbsp;&nbsp;<span class="comment">// Notion templates, Ascendia, GitHub portfolio, Cambridge IGCSE/A Level notes</span><br>
 }`,
   contact: `<span class="keyword">let</span> contact = {<br>
-&nbsp;&nbsp;email: <span class="string">"ayesha@example.com"</span>,<br>
-&nbsp;&nbsp;github: <span class="string">"github.com/ayesha"</span><br>
-}`,
+&nbsp;&nbsp;email: <span class="string">"ayeshandfatima12345@gmail.com"</span>,<br>}`,
 };
 
 // === Typing Effect ===
