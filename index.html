@@ -1,18 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayesha | Resume</title>
+
+  <!-- Google Fonts: JetBrains Mono -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
-  <button id="theme-toggle">🌙 Dark Mode</button>
+  <!-- Theme Toggle -->
+  <button class="toggle-btn" onclick="toggleMode()">Toggle Theme</button>
 
-  <div class="terminal">
-    <p class="line">> hello, i’m <span class="highlight">ayesha</span></p>
-    <p class="line">> aspiring economist | data enthusiast | student leader</p>
-    <p class="line">> type <span class="highlight">help</span> to explore my CV</p>
+  <!-- Header -->
+  <header>
+    <h1>Ayesha</h1>
+    <p><span id="typed-text"></span></p>
+  </header>
 
-    <div id="output"></div>
+  <!-- Main Container -->
+  <div class="container">
+    <section class="fade-in">
+      <h2>About Me</h2>
+      <p>
+        Hi, I’m Ayesha. A passionate A Level student exploring technology, economics, and design.  
+        This is my interactive resume styled like code.
+      </p>
+    </section>
 
-    <p class="line">
-      <span class="highlight">></span>
-      <input id="command" type="text" placeholder="type here..." autofocus>
-    </p>
+    <section class="fade-in">
+      <h2>Skills</h2>
+      <ul>
+        <li>Web Development (HTML, CSS, JavaScript)</li>
+        <li>Data Analysis (Python, Excel)</li>
+        <li>Research & Writing (History, Sociology, Economics)</li>
+        <li>Design (Notion, Canva, Google Docs aesthetics)</li>
+      </ul>
+    </section>
+
+    <section class="fade-in">
+      <h2>Experience</h2>
+      <ul>
+        <li>Deputy Head Girl at SICAS</li>
+        <li>Founder of Ascendia academic resources</li>
+        <li>Model UN Delegate – UN Historical Security Council</li>
+        <li>Economics & Policy blogger – techonomics.os</li>
+      </ul>
+    </section>
+
+    <section class="fade-in">
+      <h2>Contact</h2>
+      <p>Email: ayesha@example.com</p>
+      <p>GitHub: <a href="https://github.com/" target="_blank">github.com/ayesha</a></p>
+    </section>
   </div>
 
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
+</html>
