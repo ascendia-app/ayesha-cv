@@ -1,0 +1,119 @@
+/* ===== Theme Variables ===== */
+:root {
+  --bg: #fafafa;
+  --text: #333;
+  --highlight: #1976d2;
+  --panel-bg: #ffffff;
+  --panel-border: #e0e0e0;
+  --header-bg: #f3f3f3;
+  --header-text: #666;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #e0e0e0;
+  --highlight: #64b5f6;
+  --panel-bg: #1e1e1e;
+  --panel-border: #2c2c2c;
+  --header-bg: #2a2a2a;
+  --header-text: #bbb;
+}
+
+/* ===== Base Layout ===== */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* ===== Toggle Button ===== */
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  background: var(--panel-bg);
+  color: var(--text);
+  border: 1px solid var(--panel-border);
+  transition: all 0.3s ease;
+}
+#theme-toggle:hover {
+  background: var(--header-bg);
+}
+
+/* ===== Terminal Container ===== */
+.terminal {
+  width: 85%;
+  max-width: 750px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
+  height: 75vh;
+  position: relative;
+}
+
+/* ===== Header Bar ===== */
+.terminal::before {
+  content: 'resume.js';
+  display: block;
+  background: var(--header-bg);
+  color: var(--header-text);
+  font-size: 0.85rem;
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--panel-border);
+  border-radius: 12px 12px 0 0;
+}
+
+/* ===== Text Styling ===== */
+.line {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+}
+
+.highlight {
+  color: var(--highlight);
+  font-weight: 600;
+}
+
+/* ===== Command Input ===== */
+#command {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--panel-border);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  width: 80%;
+  padding: 4px;
+  transition: border-color 0.2s ease;
+}
+
+#command:focus {
+  border-color: var(--highlight);
+}
+
+/* ===== Scrollbar ===== */
+.terminal::-webkit-scrollbar {
+  width: 8px;
+}
+.terminal::-webkit-scrollbar-thumb {
+  background: var(--panel-border);
+  border-radius: 4px;
+}
