@@ -81,10 +81,21 @@ commandInput.addEventListener("keydown", function (e) {
 // === Intro Lines ===
 window.addEventListener("load", () => {
   const introLines = [
-    `<span class="comment">// Welcome to Ayesha’s interactive resume</span>`,
-    `<span class="keyword">console</span>.log(<span class="string">"Hello, World!"</span>)`,
-    `<span class="comment">// Type "help" to explore my CV</span>`,
+    '<span class="comment">// Welcome to Ayesha’s interactive resume</span>',
+    '<span class="keyword">console</span>.log(<span class="string">"Hello, World!"</span>)',
+    '<span class="comment">// Type "help" to explore my CV</span>',
   ];
+
+  const output = document.getElementById("output");
+
+  introLines.forEach((line, i) => {
+    setTimeout(() => {
+      const div = document.createElement("div");
+      div.innerHTML = line;  // ✅ renders HTML instead of showing tags
+      output.appendChild(div);
+    }, i * 800);
+  });
+});
 
   let delay = 0;
   introLines.forEach((line) => {
