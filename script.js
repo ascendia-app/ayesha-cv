@@ -22,7 +22,7 @@ const commands = {
 }`,
   education: `<span class="keyword">const</span> education = {<br>
 &nbsp;&nbsp;school: <span class="string">"SICAS Lahore"</span>,<br>
-&nbsp;&nbsp;subjects: [<span class="string">"Economics"</span>, <span class="string">"Sociology"</span>, <span class="string">"Law"</span>,<span class="string">"History"</span>, <span class="string">"Math"</span>]<br>
+&nbsp;&nbsp;subjects: [<span class="string">"Economics"</span>, <span class="string">"Sociology"</span>, <span class="string">"Law"</span>, <span class="string">"History"</span>, <span class="string">"Math"</span>]<br>
 }`,
   experience: `<span class="keyword">const</span> experience = [<br>
 &nbsp;&nbsp;<span class="string">"Deputy Head Girl @ SICAS"</span>,<br>
@@ -33,7 +33,8 @@ const commands = {
 &nbsp;&nbsp;<span class="comment">// Notion templates, Ascendia, GitHub portfolio, Cambridge IGCSE/A Level notes</span><br>
 }`,
   contact: `<span class="keyword">let</span> contact = {<br>
-&nbsp;&nbsp;email: <span class="string">"ayeshandfatima12345@gmail.com"</span>,<br>}`,
+&nbsp;&nbsp;email: <span class="string">"ayeshandfatima12345@gmail.com"</span><br>
+}`,
 };
 
 // === Typing Effect ===
@@ -78,24 +79,13 @@ commandInput.addEventListener("keydown", function (e) {
   }
 });
 
-// === Intro Lines ===
+// === Intro Lines with Typing ===
 window.addEventListener("load", () => {
   const introLines = [
     '<span class="comment">// Welcome to Ayesha’s interactive resume</span>',
     '<span class="keyword">console</span>.log(<span class="string">"Hello, World!"</span>)',
     '<span class="comment">// Type "help" to explore my CV</span>',
   ];
-
-  const output = document.getElementById("output");
-
-  introLines.forEach((line, i) => {
-    setTimeout(() => {
-      const div = document.createElement("div");
-      div.innerHTML = line;  // ✅ renders HTML instead of showing tags
-      output.appendChild(div);
-    }, i * 800);
-  });
-});
 
   let delay = 0;
   introLines.forEach((line) => {
